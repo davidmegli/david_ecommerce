@@ -21,7 +21,7 @@ class Basket():
         product_id = str(product.id)
 
         if product_id in self.basket:
-            self.basket[product_id]['qty'] = qty
+            self.basket[product_id]['qty'] += qty
         else:
             self.basket[product_id] = {'price': str(product.price), 'qty': qty}
 
@@ -66,7 +66,7 @@ class Basket():
         """
         Delete item from session data
         """
-        product_id = str(product)
+        product_id = str(product) # Django uses JSON to serialize session data, so all the keys and values in the session dictionary must be strings.
 
         if product_id in self.basket:
             del self.basket[product_id]
