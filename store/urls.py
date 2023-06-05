@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views  # connect to views.py
+from . import views
 
 app_name = 'store'
 
