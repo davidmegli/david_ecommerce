@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-u2_qr^3eonuxde(c%k*639)rt!z6*858*a)fjr4t@++5j2x1!^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','https://davidecommerce-production.up.railway.app/', '127.0.0.1'] # add domain name here when deploying
+ALLOWED_HOSTS = ['localhost', 'davidecommerce-production.up.railway.app', '127.0.0.1'] # add domain name here when deploying
 
 
 # Application definition
