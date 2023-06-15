@@ -26,12 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('MY_SECRET_KEY')
+SECRET_KEY = os.getenv('MY_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ os.environ.get('DEPLOY_URL'), 'localhost','127.0.0.1'] # add domain name here when deploying
+ALLOWED_HOSTS = [ os.getenv('DEPLOY_URL'), 'localhost','127.0.0.1'] # add domain name here when deploying
 
 
 # Application definition
@@ -140,7 +140,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/") # BASE_DIR is the root folder of the project
+MEDIA_ROOT = os.path.join(BASE_DIR, "media") # BASE_DIR is the root folder of the project
 
 # Basket session ID
 BASKET_SESSION_ID = 'basket'
@@ -158,3 +158,7 @@ LOGIN_URL = '/account/login/'
 
 # Email setting
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+CSRF_TRUSTED_ORIGINS = [
+    os.getenv('DEPLOY_URL')
+]
