@@ -158,3 +158,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CSRF_TRUSTED_ORIGINS = [
     os.getenv('DEPLOY_URL')
 ]
+
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
